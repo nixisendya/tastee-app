@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+>
+
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/relativelayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+        <ImageView
+                android:id="@+id/card_view_image"
+                android:layout_width="match_parent"
+                android:layout_height="189dp"
+                android:src="@drawable/all_recipe1"
+                android:scaleType="centerCrop"
+        />
+
+        <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="360dp"
+                android:layout_height="212dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                app:cardCornerRadius="15dp"
+                android:background="@android:color/white"
+        >
+
+            <TextView
+                    android:id="@+id/card_view_image_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="40dp"
+                    android:gravity="center"
+                    android:text="Summer Pasta Primavera"
+                    android:textColor="#000"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/montserrat_bold"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="75dp"
+            >
+
+                <ImageView
+                        android:layout_height="15dp"
+                        android:layout_width="15dp"
+                        android:src="@drawable/ic_star" />
+
+                <TextView
+                        android:id="@+id/card_view_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"
+                        android:text="4.3"
+                        android:textColor="#000" />
+
+                <ImageView
+                        android:layout_height="15dp"
+                        android:layout_width="15dp"
+                        android:src="@drawable/ic_clock_circular_outline"
+                        android:tint="@color/colorText"/>
+
+                <TextView
+                        android:id="@+id/card_view_preptime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"
+                        android:text="30 min"
+                        android:textColor="@color/colorText" />
+
+                <ImageView
+                        android:layout_height="15dp"
+                        android:layout_width="15dp"
+                        android:src="@drawable/ic_dinner"
+                        android:tint="@color/colorText"/>
+
+                <TextView
+                        android:id="@+id/card_view_difficulty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"
+                        android:textColor="@color/colorText"
+                        android:text="easy"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="110dp"
+                    android:layout_marginHorizontal="10dp">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cookrecipe_servings"
+                            android:textColor="@color/colorLightGray" android:fontFamily="@font/montserrat_bold"/>
+
+                    <TextView
+                            android:id="@+id/card_view_servings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2pp"
+                            android:textColor="@color/colorText"
+                            android:textSize="18dp"
+                            android:fontFamily="@font/montserrat_bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cookrecipe_preptime"
+                            android:textColor="@color/colorLightGray" android:fontFamily="@font/montserrat_bold"/>
+
+                    <TextView
+                            android:id="@+id/card_view_prep_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="25min"
+                            android:textColor="@color/colorText"
+                            android:textSize="18dp" android:fontFamily="@font/montserrat_bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cookrecipe_cooktime"
+                            android:textColor="@color/colorLightGray"
+                            android:fontFamily="@font/montserrat_bold"/>
+
+                    <TextView
+                            android:id="@+id/card_view_cook_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5min"
+                            android:textColor="@color/colorText"
+                            android:textSize="18dp"
+                            android:fontFamily="@font/montserrat_bold"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cookrecipe_youtube"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@android:color/black"/>
+
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/buttonborderedshadow"
+                    android:drawableTop="@drawable/ic_youtubeicon"
+                    android:text="@string/cookrecipe_watchvideo"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorText"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_marginBottom="14dp"
+                    />
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cookrecipe_takeaphoto"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@android:color/black"/>
+
+        <ImageView
+                android:id="@+id/image_placeholder"
+                android:src="@drawable/cookrecipe_image_placeholder"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="14dp" />
+
+            <Button
+                    android:id="@+id/button_add_photo_from_gallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/buttonborderedshadow"
+                    android:drawableTop="@drawable/ic_photoicon"
+                    android:text="@string/cookrecipe_addphoto"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorText"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="8dp"
+                    android:layout_marginBottom="14dp"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tastee</string>
+    <string name="header_title">Halo!</string>
+    <string name="header_subtitle" translatable="false">Mau masak apa ya hari ini?</string>
+    <string name="main_popular_recipe">Resep Populer</string>
+    <string name="main_category">Kategori</string>
+    <string name="main_recent_recipe">Galeri Resep</string>
+    <string name="cookrecipe_servings">Porsi</string>
+    <string name="cookrecipe_preptime">Waktu Prep</string>
+    <string name="cookrecipe_cooktime">Waktu Masak</string>
+    <string name="cookrecipe_youtube">Tonton video dan ikuti langkahnya!</string>
+    <string name="cookrecipe_watchvideo">Tonton video</string>
+    <string name="cookrecipe_addphoto">Tambah foto</string>
+    <string name="cookrecipe_takeaphoto">Tambahkan foto hasil karyamu!</string>
+    <string name="recipedetail_servings">Porsi</string>
+    <string name="recipedetail_preptime">Waktu Prep</string>
+    <string name="recipedetail_cooktime">Waktu Masak</string>
+    <string name="detail_cooknow">Masak Sekarang</string>
+</resources>
