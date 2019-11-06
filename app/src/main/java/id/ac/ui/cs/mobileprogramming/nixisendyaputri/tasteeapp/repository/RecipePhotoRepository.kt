@@ -6,6 +6,7 @@ import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.database.RecipePh
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.database.dao.RecipePhotoDao
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.database.entity.RecipePhoto
 import android.os.AsyncTask
+import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.database.entity.RecipeMenu
 
 class RecipePhotoRepository internal constructor(application: Application) {
 
@@ -24,6 +25,10 @@ class RecipePhotoRepository internal constructor(application: Application) {
 
     fun insert(photo: RecipePhoto) {
         insertAsyncTask(photoDao).execute(photo)
+    }
+
+    fun getAllPhotos(): LiveData<List<RecipePhoto>> {
+        return allPhotos
     }
 
     private class insertAsyncTask internal constructor(private val mAsyncTaskDao: RecipePhotoDao) :

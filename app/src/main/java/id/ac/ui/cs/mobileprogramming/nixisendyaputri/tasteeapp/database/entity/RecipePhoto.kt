@@ -6,7 +6,11 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "photo_table")
 data class RecipePhoto(
 
-    @PrimaryKey(autoGenerate = true)
-    var id: Int,
     var imageResId: String
-)
+
+) {
+
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0
+
+}

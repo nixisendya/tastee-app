@@ -16,4 +16,6 @@
     <string name="recipedetail_preptime">Prep Time</string>
     <string name="recipedetail_cooktime">Cook Time</string>
     <string name="detail_cooknow">Cook Now</string>
+    <string name="detail_savephoto">Save Photo</string>
+    <string name="cooknow_savephoto">Save Photo</string>
 </resources>

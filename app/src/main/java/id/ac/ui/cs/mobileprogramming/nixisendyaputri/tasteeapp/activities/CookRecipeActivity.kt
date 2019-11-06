@@ -7,9 +7,13 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build.*
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProviders
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.R
+import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.database.entity.RecipePhoto
+import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.viewmodel.RecipePhotoViewModel
 import kotlinx.android.synthetic.main.activity_cookrecipe.*
 import kotlinx.android.synthetic.main.fragment_recipedetail.card_view_cook_time
 import kotlinx.android.synthetic.main.fragment_recipedetail.card_view_difficulty
@@ -21,9 +25,15 @@ import kotlinx.android.synthetic.main.fragment_recipedetail.card_view_servings
 
 class CookRecipeActivity : AppCompatActivity(){
 
+    private lateinit var viewModelPhoto: RecipePhotoViewModel
+    private var photoToUpload = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cookrecipe)
+
+        viewModelPhoto = ViewModelProviders.of(this).get(RecipePhotoViewModel::class.java)
+
         val intImage: Int = Integer.parseInt(intent.getStringExtra("Image"))
 
         val strName: String = intent.getStringExtra("Name")
@@ -63,14 +73,45 @@ class CookRecipeActivity : AppCompatActivity(){
                 //system OS is < Marshmallow
                 pickImageFromGallery();
             }
+
+            button_add_photo_from_gallery.visibility = View.GONE
+            button_save_photo_from_gallery.visibility = View.VISIBLE
+            textview_change_photo.visibility = View.VISIBLE
+
         }
+
+        button_save_photo_from_gallery.setOnClickListener{
+            saveList()
+            finish()
+        }
+
+        textview_change_photo.setOnClickListener{
+            if (VERSION.SDK_INT >= VERSION_CODES.M){
+                if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==
+                    PackageManager.PERMISSION_DENIED){
+                    //permission denied
+                    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
+                    //show popup to request runtime permission
+                    requestPermissions(permissions, PERMISSION_CODE);
+                }
+                else{
+                    //permission already granted
+                    pickImageFromGallery();
+                }
+            }
+            else{
+                //system OS is < Marshmallow
+                pickImageFromGallery();
+            }
+        }
+
 
 
     }
 
     private fun pickImageFromGallery() {
         //Intent to pick image
-        val intent = Intent(Intent.ACTION_PICK)
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
         intent.type = "image/*"
         startActivityForResult(intent, IMAGE_PICK_CODE)
     }
@@ -81,6 +122,7 @@ class CookRecipeActivity : AppCompatActivity(){
         //Permission code
         private val PERMISSION_CODE = 1001;
     }
+
 
     //handle requested permission result
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
@@ -103,9 +145,21 @@ class CookRecipeActivity : AppCompatActivity(){
     @SuppressLint("MissingSuperCall")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
+            photoToUpload = (data?.data).toString()
+            //image_placeholder.setImageURI(data?.data)
             image_placeholder.setImageURI(data?.data)
         }
     }
+
+    private fun saveList() {
+        val newPhoto = RecipePhoto(
+            photoToUpload)
+
+        viewModelPhoto.insert(newPhoto)
+        Toast.makeText(this,"Photo Uploaded", Toast.LENGTH_SHORT).show()
+
+    }
+
 
 
 

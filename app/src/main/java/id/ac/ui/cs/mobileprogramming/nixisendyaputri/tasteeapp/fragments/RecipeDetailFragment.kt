@@ -1,8 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.fragments
 
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,8 +13,6 @@ import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.R
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.activities.CookRecipeActivity
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.viewmodel.RecipeViewModel
 import kotlinx.android.synthetic.main.fragment_recipedetail.*
-import kotlinx.android.synthetic.main.fragment_recipedetail.view.*
-import java.io.ByteArrayOutputStream
 
 class RecipeDetailFragment : Fragment() {
 

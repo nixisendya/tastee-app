@@ -1,22 +1,17 @@
 package id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.R
-import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.activities.CookRecipeActivity
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.adapter.RecipeAdapter
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.database.entity.RecipeMenu
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.viewmodel.RecipeViewModel
-import kotlinx.android.synthetic.main.fragment_recipedetail.*
 import kotlinx.android.synthetic.main.fragment_recycler_list.*
 
 class MenuRecyclerFragment2 : Fragment() {

@@ -2,7 +2,6 @@ package id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.R
 

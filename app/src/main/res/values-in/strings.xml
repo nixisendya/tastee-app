@@ -17,4 +17,6 @@
     <string name="recipedetail_preptime">Waktu Prep</string>
     <string name="recipedetail_cooktime">Waktu Masak</string>
     <string name="detail_cooknow">Masak Sekarang</string>
+    <string name="detail_savephoto">Simpan Foto</string>
+    <string name="cooknow_savephoto">Simpan Photo</string>
 </resources>

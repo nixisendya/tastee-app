@@ -151,48 +151,14 @@
                 android:textSize="18dp"
                 android:fontFamily="@font/montserrat_bold"/>
 
+        <fragment
+            android:name="id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.fragments.RecipeGridListFragment"
+            android:id="@+id/PhotoGalleryFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
 
-        <GridLayout
-                android:id="@+id/gridlayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:paddingLeft="25dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginBottom="25dp"
-                android:gravity="center">
-
-            <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/all_recipe4"
-                    android:scaleType="centerCrop"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
-            />
-
-            <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/all_recipe6"
-                    android:scaleType="centerCrop"
-            />
-
-            <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/all_recipe2"
-                    android:scaleType="centerCrop"
-            />
-
-            <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/all_recipe5"
-                    android:scaleType="centerCrop"
-            />
-
-        </GridLayout>
+        </fragment>
 
     </LinearLayout>
 
