@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.R
 
-
 class MainActivity : AppCompatActivity(){
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -15,4 +14,6 @@ class MainActivity : AppCompatActivity(){
         setContentView(R.layout.activity_homepage)
 
     }
+
+
 }

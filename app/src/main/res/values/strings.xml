@@ -18,4 +18,8 @@
     <string name="detail_cooknow">Cook Now</string>
     <string name="detail_savephoto">Save Photo</string>
     <string name="cooknow_savephoto">Save Photo</string>
+    <string name="string_instruction">Instructions</string>
+    <string name="string_ingredients">Ingredients</string>
+    <string name="text_changephoto">Change Photo</string>
+    <string name="toast_photo_uploaded">Photo successfully uploaded</string>
 </resources>

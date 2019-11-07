@@ -15,6 +15,8 @@ data class RecipeMenu(
     var prep_time: String,
     var cook_time: String,
     var difficulty: String,
-    var servings: String
-
+    var servings: String,
+    var videoId: String,
+    var ingredientList: String,
+    var instructionList: String
 )

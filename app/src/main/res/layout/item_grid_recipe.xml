@@ -18,6 +18,8 @@
                 android:layout_height="180dp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@null"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+            android:layout_marginHorizontal="2dp"
+            android:layout_marginVertical="1dp"/>
     </FrameLayout>
 </layout>

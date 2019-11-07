@@ -11,8 +11,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.youtube.player.YouTubeStandalonePlayer
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.R
+import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.adapter.MyPagerAdapter
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.database.entity.RecipePhoto
+import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.fragments.IngredientsFragment
+import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.fragments.InstructionsFragment
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.viewmodel.RecipePhotoViewModel
 import kotlinx.android.synthetic.main.activity_cookrecipe.*
 import kotlinx.android.synthetic.main.fragment_recipedetail.card_view_cook_time
@@ -27,6 +31,8 @@ class CookRecipeActivity : AppCompatActivity(){
 
     private lateinit var viewModelPhoto: RecipePhotoViewModel
     private var photoToUpload = ""
+    private var apiKey = "API_KEY"
+    var dataFromActivityToFragment: DataFromActivityToFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,15 +49,37 @@ class CookRecipeActivity : AppCompatActivity(){
         val strServings: String = intent.getStringExtra("Servings")
         val strPrepTime: String = intent.getStringExtra("PrepTime")
         val strCookTime: String = intent.getStringExtra("CookTime")
+        val strVideoId: String = intent.getStringExtra("VideoID")
+        val strId: String = intent.getStringExtra("RecipeId")
+
 
         card_view_image.setImageResource(intImage)
         card_view_image_title.text = strName
         card_view_rating.text = strRating
-        card_view_preptime.setText(strTotalTime)
-        card_view_difficulty.setText(strDifficulty)
-        card_view_servings.setText(strServings)
-        card_view_prep_time.setText(strPrepTime)
-        card_view_cook_time.setText(strCookTime)
+        card_view_preptime.text = strTotalTime
+        card_view_difficulty.text = strDifficulty
+        card_view_servings.text = strServings
+        card_view_prep_time.text = strPrepTime
+        card_view_cook_time.text = strCookTime
+
+
+//        val bundle = Bundle()
+//        bundle.putString("Id", strId)
+//        // set MyFragment Arguments
+//        val ingredientsFrag = IngredientsFragment()
+//        val instructionsFrag = InstructionsFragment()
+//        ingredientsFrag.arguments = bundle
+//        instructionsFrag.arguments = bundle
+
+        val fragmentAdapter = MyPagerAdapter(supportFragmentManager, this)
+        viewpager_main.adapter = fragmentAdapter
+
+        tabs_main.setupWithViewPager(viewpager_main)
+
+        button_go_to_youtube.setOnClickListener{
+            val intent = YouTubeStandalonePlayer.createVideoIntent(this, apiKey, strVideoId)
+            startActivity(intent)
+        }
 
         //BUTTON CLICK
         button_add_photo_from_gallery.setOnClickListener {
@@ -118,9 +146,11 @@ class CookRecipeActivity : AppCompatActivity(){
 
     companion object {
         //image pick code
-        private val IMAGE_PICK_CODE = 1000;
+        private val IMAGE_PICK_CODE = 1000
         //Permission code
-        private val PERMISSION_CODE = 1001;
+        private val PERMISSION_CODE = 1001
+
+        val intId = 0
     }
 
 
@@ -156,12 +186,11 @@ class CookRecipeActivity : AppCompatActivity(){
             photoToUpload)
 
         viewModelPhoto.insert(newPhoto)
-        Toast.makeText(this,"Photo Uploaded", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,getString(R.string.toast_photo_uploaded), Toast.LENGTH_SHORT).show()
 
     }
 
-
-
-
-
+    interface DataFromActivityToFragment {
+        fun sendData(data: String)
+    }
 }

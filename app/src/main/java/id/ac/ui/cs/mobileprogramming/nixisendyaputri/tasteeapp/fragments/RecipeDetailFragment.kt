@@ -22,7 +22,10 @@ class RecipeDetailFragment : Fragment() {
 
     private lateinit var viewModel: RecipeViewModel
     private var imageRes = 0
+    private var videoId = ""
     private var recipeId = 0
+    private var ingredientList = ""
+    private var instructionList = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,6 +67,10 @@ class RecipeDetailFragment : Fragment() {
             intent.putExtra("Servings", servings)
             intent.putExtra("PrepTime", prepTime)
             intent.putExtra("CookTime", cookTime)
+            intent.putExtra("VideoID", videoId)
+            intent.putExtra("Ingredients", ingredientList)
+            intent.putExtra("Instructions", instructionList)
+            intent.putExtra("RecipeId", "$recipeId")
             startActivity(intent)
         }
     }
@@ -82,6 +89,9 @@ class RecipeDetailFragment : Fragment() {
                 card_view_cook_time.text = recipe.cook_time
 
                 imageRes = recipe.imageResId
+                videoId = recipe.videoId
+                ingredientList = recipe.ingredientList
+                instructionList = recipe.instructionList
             }
         })
 

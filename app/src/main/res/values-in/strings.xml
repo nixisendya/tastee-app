@@ -19,4 +19,8 @@
     <string name="detail_cooknow">Masak Sekarang</string>
     <string name="detail_savephoto">Simpan Foto</string>
     <string name="cooknow_savephoto">Simpan Photo</string>
+    <string name="string_instruction">Cara Masak</string>
+    <string name="string_ingredients">Bahan-bahan</string>
+    <string name="text_changephoto">Ganti Photo</string>
+    <string name="toast_photo_uploaded">Foto berhasil disimpan</string>
 </resources>
