@@ -181,7 +181,7 @@
         android:id="@+id/card_view_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxWidth="350dp"
+        android:maxWidth="400dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/all_recipe1"

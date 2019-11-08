@@ -279,6 +279,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:visibility="gone"
+        android:text="@string/text_changephoto"
         app:layout_constraintTop_toBottomOf="@id/button_save_photo_from_gallery"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

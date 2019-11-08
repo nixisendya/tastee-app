@@ -25,4 +25,5 @@
     <string name="toast_photo_uploaded">Foto berhasil disimpan</string>
     <string name="main_galleryemptytitle">Foto galerimu kosong :(</string>
     <string name="main_galleryemptydesc">Mulailah memasak dan potret hidangan yang anda buat!</string>
+    <string name="main_nutritiontitle">Fakta Gizi Hari Ini</string>
 </resources>
