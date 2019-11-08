@@ -11,23 +11,37 @@ import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.R
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.viewmodel.RecipeViewModel
 import kotlinx.android.synthetic.main.fragment_ingredients.*
 
-
 /**
  * A simple [Fragment] subclass.
  */
-class IngredientsFragment(recipeId: Int) : Fragment() {
+class IngredientsFragment() : Fragment() {
 
     companion object {
-        fun newInstance() = IngredientsFragment(recipeId = 0)
+        fun newInstance(index: Int): IngredientsFragment {
+            val f = IngredientsFragment()
+
+            // Supply index input as an argument.
+            val args = Bundle()
+            args.putInt("index", index)
+            f.arguments = args
+
+            return f
+        }
     }
 
     private lateinit var viewModel: RecipeViewModel
-    private var recipeId = recipeId
+    private var recipeId = 0
+
+    fun getShownIndex(): Int {
+        return arguments!!.getInt("index", 0)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Get Recipe ID
+        recipeId = getShownIndex()
         // Inflate the layout for this fragment
         val view:View = inflater.inflate(R.layout.fragment_ingredients, container, false)
 

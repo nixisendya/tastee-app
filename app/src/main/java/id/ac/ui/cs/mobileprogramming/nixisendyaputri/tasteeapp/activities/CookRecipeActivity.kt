@@ -16,8 +16,6 @@ import com.google.android.youtube.player.YouTubeStandalonePlayer
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.R
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.adapter.MyPagerAdapter
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.database.entity.RecipePhoto
-import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.fragments.IngredientsFragment
-import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.fragments.InstructionsFragment
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.viewmodel.RecipePhotoViewModel
 import kotlinx.android.synthetic.main.activity_cookrecipe.*
 import kotlinx.android.synthetic.main.fragment_recipedetail.card_view_cook_time
@@ -28,11 +26,15 @@ import kotlinx.android.synthetic.main.fragment_recipedetail.card_view_preptime
 import kotlinx.android.synthetic.main.fragment_recipedetail.card_view_rating
 import kotlinx.android.synthetic.main.fragment_recipedetail.card_view_servings
 
+
 class CookRecipeActivity : AppCompatActivity(){
 
     private lateinit var viewModelPhoto: RecipePhotoViewModel
     private var photoToUpload = ""
     private var apiKey = "AIzaSyAa_7GjRxpd-e5WzNcSJmTmHvIFk4mFTog"
+
+    private val SELECTED_ITEM_POSITION = "ItemPosition"
+    private var mPosition: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -181,5 +183,19 @@ class CookRecipeActivity : AppCompatActivity(){
         viewModelPhoto.insert(newPhoto)
         Toast.makeText(this,getString(R.string.toast_photo_uploaded), Toast.LENGTH_SHORT).show()
 
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        // Save the state of item position
+        outState.putInt(SELECTED_ITEM_POSITION, mPosition)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        // Read the state of item position
+        mPosition = savedInstanceState.getInt(SELECTED_ITEM_POSITION)
     }
 }

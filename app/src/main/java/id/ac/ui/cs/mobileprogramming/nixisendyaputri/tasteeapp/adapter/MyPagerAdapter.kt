@@ -16,9 +16,9 @@ class MyPagerAdapter(fm: FragmentManager, context: Context, recipeId: Int) : Fra
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> {
-                IngredientsFragment(recipeId)
+                IngredientsFragment.newInstance(recipeId)
             } else -> {
-                return InstructionsFragment(recipeId)
+                return InstructionsFragment.newInstance(recipeId)
             }
         }
     }

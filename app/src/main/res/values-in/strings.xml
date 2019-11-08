@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Tastee</string>
     <string name="header_title">Halo!</string>
-    <string name="header_subtitle" translatable="false">Mau masak apa ya hari ini?</string>
+    <string name="header_subtitle">Mau masak apa ya hari ini?</string>
     <string name="main_popular_recipe">Resep Populer</string>
     <string name="main_category">Kategori</string>
     <string name="main_recent_recipe">Galeri Resep</string>
