@@ -54,9 +54,9 @@ class PopulateDbAsyncTask(db: RecipeDatabase?) : AsyncTask<Unit, Unit, Unit>() {
                         "3 scallions, finely sliced (optional)\n" +
                         "Non-flammable cooking spray to grease grill\n" +
                         "10 hamburger buns",
-                instructionList = "Preheat the grill to high heat.\n" +
-                        "In a large bowl, mash the bread and milk together with a fork until it forms a chunky paste. Add the salt, pepper, garlic, Worcestershire sauce and ketchup and mix well.\n" +
-                        "Add the ground beef and scallions and break the meat up with your hands. Gently mix everything together until just combined. Do not overmix. Divide the mixture into ten equal portions and form loose balls. Flatten the balls into 3/4-inch patties about 4-1/2 inches across. Form a slight depression in the center of each patty to prevent the burgers from puffing up on the grill.\n" +
+                instructionList = "Preheat the grill to high heat.\n\n" +
+                        "In a large bowl, mash the bread and milk together with a fork until it forms a chunky paste. Add the salt, pepper, garlic, Worcestershire sauce and ketchup and mix well.\n\n" +
+                        "Add the ground beef and scallions and break the meat up with your hands. Gently mix everything together until just combined. Do not overmix. Divide the mixture into ten equal portions and form loose balls. Flatten the balls into 3/4-inch patties about 4-1/2 inches across. Form a slight depression in the center of each patty to prevent the burgers from puffing up on the grill.\n\n" +
                         "Grease the grill with non-flammable cooking spray. Grill the burgers, covered, until nicely browned on the first side, 2-4 minutes. Flip burgers and continue cooking for a few minutes more until desired doneness is reached. Before serving, toast the buns on the cooler side of the grill if desired."
             )
         )
@@ -85,10 +85,10 @@ class PopulateDbAsyncTask(db: RecipeDatabase?) : AsyncTask<Unit, Unit, Unit>() {
                         "1 cup frozen peas (no need to thaw)\n" +
                         "1/4 cup plain low fat (2%) or whole Greek yogurt (do not use nonfat)\n" +
                         "1/4 cup chopped fresh cilantro",
-                instructionList = "Sprinkle the chicken evenly with 3/4 teaspoon salt, 1/4 teaspoon pepper and 1 teaspoon curry powder.\n" +
-                        "Heat 1-1/2 tablespoons of oil in a 12-inch skillet over high heat until just smoking. Add the chicken in a single layer and cook, stirring occasionally, until lightly browned but still pink in spots, about 3 minutes. Transfer the partially cooked chicken to a clean bowl and set aside.\n" +
-                        "Add the remaining 1-1/2 tablespoons oil to the skillet and set heat to medium. Add the onions and cook, stirring occasionally, until softened, about 5 minutes. Stir in the garlic, ginger and remaining 1-1/2 teaspoons curry powder and cook until fragrant, about a minute more.\n" +
-                        "Whisk the chicken broth and cornstarch together to dissolve the cornstarch, then add to the skillet along with the sugar and 1/8 teaspoon salt. Bring to a boil, then reduce the heat to medium and cook until the sauce is nicely thickened, about 5 minutes.\n" +
+                instructionList = "Sprinkle the chicken evenly with 3/4 teaspoon salt, 1/4 teaspoon pepper and 1 teaspoon curry powder.\n\n" +
+                        "Heat 1-1/2 tablespoons of oil in a 12-inch skillet over high heat until just smoking. Add the chicken in a single layer and cook, stirring occasionally, until lightly browned but still pink in spots, about 3 minutes. Transfer the partially cooked chicken to a clean bowl and set aside.\n\n" +
+                        "Add the remaining 1-1/2 tablespoons oil to the skillet and set heat to medium. Add the onions and cook, stirring occasionally, until softened, about 5 minutes. Stir in the garlic, ginger and remaining 1-1/2 teaspoons curry powder and cook until fragrant, about a minute more.\n\n" +
+                        "Whisk the chicken broth and cornstarch together to dissolve the cornstarch, then add to the skillet along with the sugar and 1/8 teaspoon salt. Bring to a boil, then reduce the heat to medium and cook until the sauce is nicely thickened, about 5 minutes.\n\n" +
                         "Add the peas and partially cooked chicken to the skillet, turn the heat down to low and simmer until the chicken is cooked through, a few minutes. Off the heat, stir in the yogurt and cilantro; then season with salt and pepper, to taste. Serve with basmati rice."
             )
         )
@@ -108,9 +108,9 @@ class PopulateDbAsyncTask(db: RecipeDatabase?) : AsyncTask<Unit, Unit, Unit>() {
                         "Vegetable oil, for frying\n" +
                         "12 (6-inch) soft corn tortillas, warmed\n" +
                         "Lime wedges, for serving",
-                instructionList = "Toss the cabbage, red onion, cilantro, vinegar, oil and salt together in a medium bowl and set aside.\n" +
-                        "Combine the mayonnaise, lime juice, chipotle chiles with sauce and garlic in a blender or mini food processor and blend until smooth. Set aside.\n" +
-                        "Mix the flour, salt and pepper together in a medium bowl. Gradually add the beer, whisking until the batter is smooth with no lumps. Set aside.\n" +
+                instructionList = "Toss the cabbage, red onion, cilantro, vinegar, oil and salt together in a medium bowl and set aside.\n\n" +
+                        "Combine the mayonnaise, lime juice, chipotle chiles with sauce and garlic in a blender or mini food processor and blend until smooth. Set aside.\n\n" +
+                        "Mix the flour, salt and pepper together in a medium bowl. Gradually add the beer, whisking until the batter is smooth with no lumps. Set aside.\n\n" +
                         "In a medium skillet, over medium heat, add enough oil to reach a depth of 1/2-inch. Heat the oil until a deep-fry thermometer registers 350 degrees F, or when the end of a wooden spoon sizzles when dipped into the oil."
             )
         )
@@ -133,8 +133,8 @@ class PopulateDbAsyncTask(db: RecipeDatabase?) : AsyncTask<Unit, Unit, Unit>() {
                         "Handful grape tomatoes, halved\n" +
                         "Handful pitted olives\n" +
                         "Ricotta Salata (see note) or Feta, crumbled to taste",
-                instructionList = "Make the dressing: Combine all dressing ingredients in a food processor and blitz to blend.\n" +
-                        "Place all of the salad ingredients except for the cheese in a large bowl. Right before serving, add about half of the dressing and toss well. Add more dressing little by little as necessary; be sure to dress greens very generously, otherwise salad will be bland. Toss in the cheese, then taste and adjust seasoning with salt and pepper, if necessary.\n" +
+                instructionList = "Make the dressing: Combine all dressing ingredients in a food processor and blitz to blend.\n\n" +
+                        "Place all of the salad ingredients except for the cheese in a large bowl. Right before serving, add about half of the dressing and toss well. Add more dressing little by little as necessary; be sure to dress greens very generously, otherwise salad will be bland. Toss in the cheese, then taste and adjust seasoning with salt and pepper, if necessary.\n\n" +
                         "Note: Ricotta salata is an Italian sheep's milk cheese that has a salty, slightly tangy flavor, almost like a dry Italian feta. It is not the same as the wet ricotta in the tub. You can find it at Whole Foods, gourmet grocers or specialty cheese shops."
             )
         )
@@ -159,8 +159,8 @@ class PopulateDbAsyncTask(db: RecipeDatabase?) : AsyncTask<Unit, Unit, Unit>() {
                         "10 tablespoons cold unsalted butter, cut into 1/2-inch chunks\n" +
                         "3/4 cup buttermilk (see note below)\n" +
                         "2 tablespoons turbinado sugar",
-                instructionList = "Preheat the oven to 425°F and set an oven rack in the middle position. Line a 13x18-in baking sheet with parchment paper.\n" +
-                        "In a large bowl, whisk together the flour, cornstarch, baking powder, baking soda, granulated sugar, and salt.\n" +
+                instructionList = "Preheat the oven to 425°F and set an oven rack in the middle position. Line a 13x18-in baking sheet with parchment paper.\n\n" +
+                        "In a large bowl, whisk together the flour, cornstarch, baking powder, baking soda, granulated sugar, and salt.\n\n" +
                         "Add the pieces of cold butter. Use your fingertips to rub the butter into the dry ingredients until the mixture resembles coarse crumbs with pea-sized clumps of butter within. Add the buttermilk and stir with a rubber spatula until the dough comes together into a sticky, shaggy mass. Do not overmix."
             )
         )

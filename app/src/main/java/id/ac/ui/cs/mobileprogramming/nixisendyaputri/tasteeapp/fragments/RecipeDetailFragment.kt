@@ -14,6 +14,7 @@ import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.activities.CookRe
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.viewmodel.RecipeViewModel
 import kotlinx.android.synthetic.main.fragment_recipedetail.*
 
+
 class RecipeDetailFragment : Fragment() {
 
     companion object {
@@ -43,6 +44,7 @@ class RecipeDetailFragment : Fragment() {
         arguments?.let {
             recipeId = RecipeDetailFragmentArgs.fromBundle(it).id
         }
+
 
         viewModel = ViewModelProviders.of(this).get(RecipeViewModel::class.java)
         observeViewModel()

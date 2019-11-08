@@ -12,13 +12,13 @@ import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.R
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.viewmodel.RecipeViewModel
 import kotlinx.android.synthetic.main.fragment_instructions.*
 
-class InstructionsFragment : Fragment(){
+class InstructionsFragment(recipeId: Int) : Fragment(){
     companion object {
-        fun newInstance() = InstructionsFragment()
+        fun newInstance() = InstructionsFragment(recipeId = 0)
     }
 
     private lateinit var viewModel: RecipeViewModel
-    private var recipeId = 0
+    private var recipeId = recipeId
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

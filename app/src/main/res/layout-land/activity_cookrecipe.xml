@@ -181,8 +181,6 @@
         android:id="@+id/card_view_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxWidth="400dp"
-        android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/all_recipe1"
         app:layout_constraintTop_toBottomOf="@id/cardview_cookerecipe"
@@ -291,10 +289,10 @@
         android:id="@+id/tabs_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="130dp"
         app:tabMode="fixed"
         app:tabIndicatorColor="@color/colorMain"
-        app:layout_constraintTop_toBottomOf="@id/card_view_image"
+        app:layout_constraintTop_toBottomOf="@id/image_placeholder"
         app:layout_constraintStart_toEndOf="@id/card_view_image"
         app:layout_constraintEnd_toEndOf="parent"/>
 

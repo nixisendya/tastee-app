@@ -9,14 +9,16 @@ import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.fragments.Ingredi
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.fragments.InstructionsFragment
 
 
-class MyPagerAdapter(fm: FragmentManager, context: Context) : FragmentPagerAdapter(fm) {
+class MyPagerAdapter(fm: FragmentManager, context: Context, recipeId: Int) : FragmentPagerAdapter(fm) {
+
+    private val recipeId = recipeId
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> {
-                IngredientsFragment()
+                IngredientsFragment(recipeId)
             } else -> {
-                return InstructionsFragment()
+                return InstructionsFragment(recipeId)
             }
         }
     }

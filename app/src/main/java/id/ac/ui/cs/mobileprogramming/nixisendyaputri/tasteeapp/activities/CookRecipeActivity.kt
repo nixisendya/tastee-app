@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build.*
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -31,7 +32,7 @@ class CookRecipeActivity : AppCompatActivity(){
 
     private lateinit var viewModelPhoto: RecipePhotoViewModel
     private var photoToUpload = ""
-    private var apiKey = "API_KEY"
+    private var apiKey = "AIzaSyAa_7GjRxpd-e5WzNcSJmTmHvIFk4mFTog"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +51,9 @@ class CookRecipeActivity : AppCompatActivity(){
         val strCookTime: String = intent.getStringExtra("CookTime")
         val strVideoId: String = intent.getStringExtra("VideoID")
         val strId: String = intent.getStringExtra("RecipeId")
+        Log.d("RecipeId", strId)
 
+        val recipeId = Integer.parseInt(strId)
 
         card_view_image.setImageResource(intImage)
         card_view_image_title.text = strName
@@ -61,16 +64,7 @@ class CookRecipeActivity : AppCompatActivity(){
         card_view_prep_time.text = strPrepTime
         card_view_cook_time.text = strCookTime
 
-
-//        val bundle = Bundle()
-//        bundle.putString("Id", strId)
-//        // set MyFragment Arguments
-//        val ingredientsFrag = IngredientsFragment()
-//        val instructionsFrag = InstructionsFragment()
-//        ingredientsFrag.arguments = bundle
-//        instructionsFrag.arguments = bundle
-
-        val fragmentAdapter = MyPagerAdapter(supportFragmentManager, this)
+        val fragmentAdapter = MyPagerAdapter(supportFragmentManager, this, recipeId)
         viewpager_main.adapter = fragmentAdapter
 
         tabs_main.setupWithViewPager(viewpager_main)
@@ -187,9 +181,5 @@ class CookRecipeActivity : AppCompatActivity(){
         viewModelPhoto.insert(newPhoto)
         Toast.makeText(this,getString(R.string.toast_photo_uploaded), Toast.LENGTH_SHORT).show()
 
-    }
-
-    interface DataFromActivityToFragment {
-        fun sendData(data: String)
     }
 }

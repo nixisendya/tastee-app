@@ -1,7 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,15 +15,14 @@ import kotlinx.android.synthetic.main.fragment_ingredients.*
 /**
  * A simple [Fragment] subclass.
  */
-class IngredientsFragment : Fragment() {
+class IngredientsFragment(recipeId: Int) : Fragment() {
 
     companion object {
-        fun newInstance() = IngredientsFragment()
+        fun newInstance() = IngredientsFragment(recipeId = 0)
     }
 
     private lateinit var viewModel: RecipeViewModel
-    private var recipeId = 0
-    private var strRecipeId = ""
+    private var recipeId = recipeId
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,10 +36,6 @@ class IngredientsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        arguments?.let {
-            recipeId = RecipeDetailFragmentArgs.fromBundle(it).id
-        }
 
         viewModel = ViewModelProviders.of(this).get(RecipeViewModel::class.java)
         observeViewModel()
