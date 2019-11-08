@@ -32,7 +32,6 @@ class CookRecipeActivity : AppCompatActivity(){
     private lateinit var viewModelPhoto: RecipePhotoViewModel
     private var photoToUpload = ""
     private var apiKey = "API_KEY"
-    var dataFromActivityToFragment: DataFromActivityToFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

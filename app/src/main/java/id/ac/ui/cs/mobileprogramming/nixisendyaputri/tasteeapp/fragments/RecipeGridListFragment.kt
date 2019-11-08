@@ -42,6 +42,17 @@ class RecipeGridListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(RecipePhotoViewModel::class.java)
 
+        observeViewModel()
+    }
+
+    fun observeViewModel() {
+        viewModel.getAllPhotos().observe(this,
+            Observer<List<RecipePhoto>> {t ->
+                photoAdapter.setPhotos(t!!)
+                setLayoutInFragment(t.size)})
+    }
+
+    private fun setLayoutInFragment(length: Int) {
         val display = activity?.windowManager?.defaultDisplay
         val outMetrics = DisplayMetrics()
         display?.getMetrics(outMetrics)
@@ -49,16 +60,19 @@ class RecipeGridListFragment : Fragment() {
         val density = resources.displayMetrics.density
         val dpWidth = outMetrics.widthPixels / density
         val columns = (dpWidth/180).roundToInt()
-        grid_recycler_view.apply{
-            layoutManager = GridLayoutManager(activity, columns)
-            adapter = photoAdapter
+
+        if (length > 0) {
+            grid_recycler_view.visibility = View.VISIBLE
+            gallery_empty_state.visibility = View.GONE
+
+            grid_recycler_view.apply {
+                layoutManager = GridLayoutManager(activity, columns)
+                adapter = photoAdapter
+            }
+        } else {
+            grid_recycler_view.visibility = View.GONE
+            gallery_empty_state.visibility = View.VISIBLE
         }
 
-        observeViewModel()
-    }
-
-    fun observeViewModel() {
-        viewModel.getAllPhotos().observe(this,
-            Observer<List<RecipePhoto>> { t -> photoAdapter.setPhotos(t!!) })
     }
 }

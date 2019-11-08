@@ -22,4 +22,6 @@
     <string name="string_ingredients">Ingredients</string>
     <string name="text_changephoto">Change Photo</string>
     <string name="toast_photo_uploaded">Photo successfully uploaded</string>
+    <string name="main_galleryemptytitle">Your gallery is empty :(</string>
+    <string name="main_galleryemptydesc">Start cooking and take a picture of your finished dish!</string>
 </resources>

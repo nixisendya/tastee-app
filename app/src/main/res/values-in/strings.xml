@@ -23,4 +23,6 @@
     <string name="string_ingredients">Bahan-bahan</string>
     <string name="text_changephoto">Ganti Photo</string>
     <string name="toast_photo_uploaded">Foto berhasil disimpan</string>
+    <string name="main_galleryemptytitle">Foto galerimu kosong :(</string>
+    <string name="main_galleryemptydesc">Mulailah memasak dan potret hidangan yang anda buat!</string>
 </resources>
