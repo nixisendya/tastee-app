@@ -22,6 +22,8 @@
     <string name="string_ingredients">Ingredients</string>
     <string name="text_changephoto">Change Photo</string>
     <string name="toast_photo_uploaded">Photo successfully uploaded</string>
+    <string name="toast_empty_photo">Uploaded error, add a photo first</string>
+    <string name="toast_permission_denied">Permission Denied</string>
     <string name="main_galleryemptytitle">Your gallery is empty :(</string>
     <string name="main_galleryemptydesc">Start cooking and take a picture of your finished dish!</string>
     <string name="main_nutritiontitle">Nutrition Fact of The Day</string>
