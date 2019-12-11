@@ -26,4 +26,6 @@
     <string name="main_galleryemptytitle">Foto galerimu kosong :(</string>
     <string name="main_galleryemptydesc">Mulailah memasak dan potret hidangan yang anda buat!</string>
     <string name="main_nutritiontitle">Fakta Gizi Hari Ini</string>
+    <string name="string_recommendMenu">Rekomendasi Untuk Kamu</string>
+    <string name="string_recommended">Menu yang direkomendasi</string>
 </resources>

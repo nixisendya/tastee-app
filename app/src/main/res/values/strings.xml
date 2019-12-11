@@ -25,4 +25,6 @@
     <string name="main_galleryemptytitle">Your gallery is empty :(</string>
     <string name="main_galleryemptydesc">Start cooking and take a picture of your finished dish!</string>
     <string name="main_nutritiontitle">Nutrition Fact of The Day</string>
+    <string name="string_recommendMenu">Recommendation For You</string>
+    <string name="string_recommended">Recommended Menu</string>
 </resources>
