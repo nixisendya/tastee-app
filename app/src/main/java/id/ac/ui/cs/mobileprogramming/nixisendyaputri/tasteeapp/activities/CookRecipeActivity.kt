@@ -4,8 +4,11 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Build.*
 import android.os.Bundle
 import android.util.Log
@@ -74,8 +77,27 @@ class CookRecipeActivity : AppCompatActivity(){
         tabs_main.setupWithViewPager(viewpager_main)
 
         button_go_to_youtube.setOnClickListener{
-            val intent = YouTubeStandalonePlayer.createVideoIntent(this, apiKey, strVideoId)
-            startActivity(intent)
+
+            val cm = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
+            val isConnected: Boolean = activeNetwork?.isConnected == true
+
+            if(isConnected) {
+                val intent = YouTubeStandalonePlayer.createVideoIntent(this, apiKey, strVideoId)
+                startActivity(intent)
+            } else {
+                val builder = AlertDialog.Builder(this)
+                builder.setMessage("Please make sure you are connected to the internet.")
+                    .setTitle("Check your connection")
+
+                builder.setPositiveButton("OK"
+                ) { dialog, id ->
+                    dialog.dismiss()
+                }
+
+                val dialog = builder.create()
+                dialog.show()
+            }
         }
 
         //BUTTON CLICK
