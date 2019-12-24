@@ -29,4 +29,9 @@
     <string name="main_nutritiontitle">Nutrition Fact of The Day</string>
     <string name="string_recommendMenu">Recommendation For You</string>
     <string name="string_recommended">Recommended Menu</string>
+    <string name="text_playmusic">Play some music while you cook!</string>
+    <string name="text_buttonplay">Play</string>
+    <string name="text_buttonStop">Stop</string>
+    <string name="toast_music_play">Music Playing</string>
+    <string name="toast_music_stop">Music Stopped</string>
 </resources>

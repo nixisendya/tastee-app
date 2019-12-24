@@ -16,6 +16,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
+        <!-- defining the service class here -->
+        <service android:name=".MusicPlayer" />
+
         <activity
             android:name=".activities.SplashActivity"
             android:theme="@style/AppTheme.SplashScreen">

@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.youtube.player.YouTubeStandalonePlayer
+import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.MusicPlayer
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.R
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.adapter.MyPagerAdapter
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.database.entity.RecipePhoto
@@ -98,6 +99,22 @@ class CookRecipeActivity : AppCompatActivity(){
                 val dialog = builder.create()
                 dialog.show()
             }
+        }
+
+        buttonStart.setOnClickListener {
+            startService(Intent(this, MusicPlayer::class.java))
+            Toast.makeText(this,getString(R.string.toast_music_play), Toast.LENGTH_SHORT).show()
+
+            buttonStart.visibility = View.GONE
+            buttonStop.visibility = View.VISIBLE
+        }
+
+        buttonStop.setOnClickListener {
+            stopService(Intent(this, MusicPlayer::class.java))
+            Toast.makeText(this,getString(R.string.toast_music_stop), Toast.LENGTH_SHORT).show()
+
+            buttonStop.visibility = View.GONE
+            buttonStart.visibility = View.VISIBLE
         }
 
         //BUTTON CLICK
