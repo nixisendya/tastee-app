@@ -104,17 +104,11 @@ class CookRecipeActivity : AppCompatActivity(){
         buttonStart.setOnClickListener {
             startService(Intent(this, MusicPlayer::class.java))
             Toast.makeText(this,getString(R.string.toast_music_play), Toast.LENGTH_SHORT).show()
-
-            buttonStart.visibility = View.GONE
-            buttonStop.visibility = View.VISIBLE
         }
 
         buttonStop.setOnClickListener {
             stopService(Intent(this, MusicPlayer::class.java))
             Toast.makeText(this,getString(R.string.toast_music_stop), Toast.LENGTH_SHORT).show()
-
-            buttonStop.visibility = View.GONE
-            buttonStart.visibility = View.VISIBLE
         }
 
         //BUTTON CLICK

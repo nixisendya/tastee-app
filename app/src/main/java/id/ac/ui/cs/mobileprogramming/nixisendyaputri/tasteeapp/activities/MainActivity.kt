@@ -35,11 +35,8 @@ class MainActivity : AppCompatActivity(){
         viewModel.detailRecipe(number).observe(this, Observer { recipe ->
             recipe?.let {
                 textview_recommended.text = recipe.name
-                //textview_recommended.text = number.toString()
             }
         })
-
-        //textview_recommended.text = number.toString()
     }
 
 
