@@ -55,16 +55,14 @@ class SplashActivity : AppCompatActivity(){
             PendingIntent.FLAG_UPDATE_CURRENT
         )
         val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val calendar: Calendar = Calendar.getInstance().apply {
-            timeInMillis = System.currentTimeMillis()
-            set(Calendar.HOUR_OF_DAY, 11)
-            set(Calendar.MINUTE,0)
-            set(Calendar.SECOND,0)
-        }
-        alarmManager.setRepeating(
+        val calendar: Calendar = Calendar.getInstance()
+        calendar.timeInMillis = System.currentTimeMillis()
+        calendar.set(Calendar.HOUR_OF_DAY, 11)
+
+        alarmManager.setInexactRepeating(
             AlarmManager.RTC_WAKEUP,
             calendar.timeInMillis,
-            (1000 * 60 * 60 * 24 * 7).toLong(),
+            AlarmManager.INTERVAL_DAY,
             pendingIntent
         )
     }
