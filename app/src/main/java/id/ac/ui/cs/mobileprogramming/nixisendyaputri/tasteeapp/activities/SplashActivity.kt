@@ -18,7 +18,7 @@ import java.util.*
 
 class SplashActivity : AppCompatActivity(){
 
-    private val splashTime = 3000L
+    private val splashTime = 5000L
     private lateinit var myHandler : Handler
     val NOTIFICATION_CHANNEL_ID = "10001"
     private val default_notification_channel_id = "default"
