@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.MyNotificationPublisher
 import id.ac.ui.cs.mobileprogramming.nixisendyaputri.tasteeapp.R
+import java.util.*
+
 
 class SplashActivity : AppCompatActivity(){
 
@@ -25,7 +27,7 @@ class SplashActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splashscreen)
 
-        scheduleNotification(getNotification( "What would you like to eat today?" ) , 5000 ) ;
+        scheduleNotification(getNotification( "Try one of our easy-to-follow delicious recipes!" ))
 
         myHandler = Handler()
 
@@ -42,7 +44,7 @@ class SplashActivity : AppCompatActivity(){
     }
 
 
-    private fun scheduleNotification(notification: Notification, delay: Int) {
+    private fun scheduleNotification(notification: Notification) {
         val notificationIntent = Intent(this, MyNotificationPublisher::class.java)
         notificationIntent.putExtra(MyNotificationPublisher.NOTIFICATION_ID, 1)
         notificationIntent.putExtra(MyNotificationPublisher.NOTIFICATION, notification)
@@ -52,9 +54,19 @@ class SplashActivity : AppCompatActivity(){
             notificationIntent,
             PendingIntent.FLAG_UPDATE_CURRENT
         )
-        val futureInMillis = SystemClock.elapsedRealtime() + delay
         val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis, pendingIntent)
+        val calendar: Calendar = Calendar.getInstance().apply {
+            timeInMillis = System.currentTimeMillis()
+            set(Calendar.HOUR_OF_DAY, 11)
+            set(Calendar.MINUTE,0)
+            set(Calendar.SECOND,0)
+        }
+        alarmManager.setRepeating(
+            AlarmManager.RTC_WAKEUP,
+            calendar.timeInMillis,
+            (1000 * 60 * 60 * 24 * 7).toLong(),
+            pendingIntent
+        )
     }
 
     private fun getNotification(content: String): Notification {
@@ -64,7 +76,7 @@ class SplashActivity : AppCompatActivity(){
             .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT)
 
         val builder = NotificationCompat.Builder(this, default_notification_channel_id)
-        builder.setContentTitle("Tastee App")
+        builder.setContentTitle("Feeling hungry? Not sure what to eat?")
         builder.setContentText(content)
         builder.setSmallIcon(R.mipmap.ic_launcher_round)
         builder.setAutoCancel(true)
