@@ -58,7 +58,7 @@ class OpenGLRenderer(val context: Context) : GLSurfaceView.Renderer {
     private fun rotateSquare(square: Square, direction: Int) {
         Matrix.setIdentityM(mModelMatrix, 0) // initialize to identity matrix
         Matrix.translateM(mModelMatrix, 0, direction * dx, 0f, 0f) // translation to the left
-        dx += 0.00002f
+        dx += 0.00000694f
 
         // Set the camera position (View matrix)
         Matrix.setLookAtM(mViewMatrix, 0, 0f, 0f, -3f, 0f, 0f, 0f, 0f, 1.0f, 0.0f)
