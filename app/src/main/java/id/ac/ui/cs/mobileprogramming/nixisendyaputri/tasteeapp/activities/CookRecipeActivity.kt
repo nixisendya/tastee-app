@@ -31,6 +31,9 @@ import kotlinx.android.synthetic.main.fragment_recipedetail.card_view_prep_time
 import kotlinx.android.synthetic.main.fragment_recipedetail.card_view_preptime
 import kotlinx.android.synthetic.main.fragment_recipedetail.card_view_rating
 import kotlinx.android.synthetic.main.fragment_recipedetail.card_view_servings
+import android.app.ActivityManager
+
+
 
 
 class CookRecipeActivity : AppCompatActivity(){
@@ -104,11 +107,20 @@ class CookRecipeActivity : AppCompatActivity(){
         buttonStart.setOnClickListener {
             startService(Intent(this, MusicPlayer::class.java))
             Toast.makeText(this,getString(R.string.toast_music_play), Toast.LENGTH_SHORT).show()
+            buttonStart.isEnabled = false
+        }
+
+        if(isMyServiceRunning(MusicPlayer::class.java)) {
+            Log.d("serviceMusic",(isMyServiceRunning((MusicPlayer::class.java)).toString()))
+            buttonStart.isEnabled = false
+        } else {
+            Log.d("serviceMusic",(isMyServiceRunning((MusicPlayer::class.java)).toString()))
         }
 
         buttonStop.setOnClickListener {
             stopService(Intent(this, MusicPlayer::class.java))
             Toast.makeText(this,getString(R.string.toast_music_stop), Toast.LENGTH_SHORT).show()
+            buttonStart.isEnabled = true
         }
 
         //BUTTON CLICK
@@ -275,4 +287,16 @@ class CookRecipeActivity : AppCompatActivity(){
         // Read the state of item position
         mPosition = savedInstanceState.getInt(SELECTED_ITEM_POSITION)
     }
+
+    private fun isMyServiceRunning(serviceClass: Class<*>): Boolean {
+        val manager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+        for (service in manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.name == service.service.className) {
+                return true
+            }
+        }
+        return false
+    }
+
+
 }
